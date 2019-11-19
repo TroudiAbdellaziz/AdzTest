@@ -1,0 +1,22 @@
+<div class="center main">
+  <img src="../../../../assets/logo-Adictiz.png" class="logo">
+  <form class="example-form" [formGroup]="form" autocomplete="off" novalidate (ngSubmit)="search(form.value)">
+    <mat-form-field class="mat-form-field-wrapper-update">
+      <input 
+      name="inputField"
+      #inputField
+      formControlName="input"
+      matInput placeholder="{{'searchplaceholder' | translate}}">
+
+      <mat-error i18n *ngIf="input.invalid">
+          {{'search_error' | translate}} 
+      </mat-error>
+      
+    </mat-form-field>
+    <div>
+    <mat-card-actions align="center">
+      <button mat-raised-button color="primary" [disabled]="!form.valid" >{{'search' | translate}}</button>
+    </mat-card-actions>
+  </div>
+  </form>
+</div>

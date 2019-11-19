@@ -1,0 +1,19 @@
+<mat-card  class="myCard example-card">
+  <mat-card-header (click)="openDialog()" class="focus">
+    <mat-card-title *ngIf= '!this.longText'><b>{{book.volumeInfo.title}}</b></mat-card-title>
+    <mat-card-title  *ngIf= 'this.longText'><b>{{book.volumeInfo.title.substring(0,70)}}</b><a class="threeDots" (click)='showTitle()'>.....</a></mat-card-title>
+
+  </mat-card-header>
+  <div class="focus" *ngFor=" let author of book.volumeInfo.changedAuthors" (click)="openDialog()">
+    <mat-card-subtitle>{{author}}</mat-card-subtitle>
+  </div>
+
+  <div class="center" >
+    <img class="center imagePrev" *ngIf="book.volumeInfo.imageLinks" src={{book.volumeInfo.imageLinks.thumbnail}}>
+    <img class="center  imagePrev" *ngIf="!book.volumeInfo.imageLinks" src="../../../../assets/NO_Image_Available.jpg">
+  </div>
+  <br><a href={{book.volumeInfo.previewLink}}>
+  <img class="focus pdf" mat-card-sm-image src="../../../../assets/pdf.png" ></a>
+  <span class="center" *ngIf='book.volumeInfo.categories'>{{book.volumeInfo.categories[0]}}</span>
+  <span class="center"  *ngIf='!book.volumeInfo.categories'>unclassified</span>
+</mat-card>

@@ -1,0 +1,20 @@
+{
+  "search": "Rechercher",
+  "searchplaceholder": "Rechercher par livre, auteur, categorie...",
+  "search_error": "S'il vous plaît écrivez quelque chose!",
+  "return": "Retourner",
+  "filter_by_author": "filtrer par auteur...",
+  "filter_by_category": "filtrer par catégorie...",
+  "select_book": "Sélectionner un livre",
+  "filter": "Filtrer",
+  "nothing": "Aucun",
+  "written_by": "Ecrit par",
+  "published_by": "Publié par",
+  "date": "Date:",
+  "description": "Description",
+  "category": "Catégorie",
+  "preview": "Voir preview",
+  "close": "Fermer",
+  "french": "Français",
+  "english": "  Anglais"
+}

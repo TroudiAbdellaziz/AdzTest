@@ -1,0 +1,15 @@
+.threeDots{
+    color: blue
+}
+.myCard{
+    height: 375px;
+     width:275px
+}
+.imagePrev{
+    width: 128px; 
+    height: 214px;
+    display:inline;
+}
+.pdf{
+    height: 50px
+}

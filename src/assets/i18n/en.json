@@ -1,0 +1,20 @@
+{
+  "search": "search",
+  "searchplaceholder": "Search for a book, author, category...",
+  "search_error": "Please write something!",
+  "return": "Return",
+  "filter_by_author": "filter by author...",
+  "filter_by_category": "filter by category...",
+  "select_book": "Select a book",
+  "filter": "Filter",
+  "nothing": "None",
+  "written_by": "Written by",
+  "published_by": "Published by",
+  "date": "On:",
+  "description": "Description",
+  "category": "Category",
+  "preview": "Check preview",
+  "close": "close",
+  "french": "French  ",
+  "english": "  English"
+}

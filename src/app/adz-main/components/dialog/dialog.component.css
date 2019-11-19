@@ -1,0 +1,9 @@
+.mat-dialog-container{
+    overflow-y: scroll !important
+}
+
+.imagePrev{
+    width: 128px; 
+    height: 214px;
+    display:inline;
+}

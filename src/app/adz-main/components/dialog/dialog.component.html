@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>{{book.volumeInfo.title}}</h1>
+<mat-dialog-content style="font-family: Roboto, sans-serif;" >
+  <p *ngIf='book.volumeInfo.authors'>{{'written_by' | translate}}: </p>
+  <div *ngIf='book.volumeInfo.authors'>
+  <div *ngFor=" let author of book.volumeInfo.authors ">
+    <mat-card-subtitle>  {{author}}</mat-card-subtitle>
+  </div>
+  </div>
+  <p *ngIf='book.volumeInfo.publisher'>{{'published_by' | translate}}:</p>
+  <mat-card-subtitle *ngIf='book.volumeInfo.publisher'>  {{book.volumeInfo.publisher}}</mat-card-subtitle>
+  <p *ngIf='book.volumeInfo.publishedDate'>{{'date' | translate}}</p>
+  <mat-card-subtitle *ngIf='book.volumeInfo.publishedDate'>  {{book.volumeInfo.publishedDate}}</mat-card-subtitle>
+  <p *ngIf='book.volumeInfo.description'>{{'description' | translate}}:</p>
+  <mat-card-subtitle *ngIf='book.volumeInfo.description'>  {{book.volumeInfo.description}}</mat-card-subtitle>
+
+  <div class="center">
+    <img class="center imagePrev" *ngIf="book.volumeInfo.imageLinks" src={{book.volumeInfo.imageLinks.thumbnail}}>
+ </div>
+ <br>
+ 
+ <div  class="center" *ngIf="book.volumeInfo.categories">
+    <span *ngIf='book.volumeInfo.categories'><b>{{'category' | translate}}:  </b></span>
+
+    <span style="color: rgba(0,0,0,.54);font-size: 14px;" *ngFor=" let category of book.volumeInfo.categories ">  {{category}} </span>
+
+ </div>
+</mat-dialog-content>
+<div mat-dialog-actions >
+    <a href={{book.volumeInfo.previewLink}}>
+  <button mat-button>{{'preview' | translate}}</button>
+  </a>
+  <button mat-button mat-dialog-close cdkFocusInitial>{{'close' | translate}}</button>
+</div>

@@ -1,0 +1,13 @@
+<adz-filter [books]="books"></adz-filter>
+<div class="grid-container" *ngIf="isCalled&&!selection">     
+  <adz-book  *ngFor=" let book of books" [book]="book"></adz-book>
+</div>
+<div class="grid-container" *ngIf="selection">     
+    <adz-book  *ngFor=" let book of selectedBooks" [book]="book"></adz-book>
+  </div>
+<mat-paginator [length]=length *ngIf="isCalled"
+              [pageSize]=books.length
+              (page) = "pageEvent($event)"
+              >
+</mat-paginator>
+
