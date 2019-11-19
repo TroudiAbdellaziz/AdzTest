@@ -54,7 +54,7 @@ export class AdzresultComponent implements OnInit {
       }
     })
   }
-  
+
   public ngOnDestroy(): void {
     //remove the subscription 
     if (this.subscription) this.subscription.unsubscribe();
@@ -70,4 +70,6 @@ export class AdzresultComponent implements OnInit {
         self.isCalled = true;
       })
   }
+
+
 }

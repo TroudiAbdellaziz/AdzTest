@@ -1,49 +1,49 @@
-
 <div class="center main">
 
   <form class="example-form">
-  <div class="grid-container">
-      <mat-card-actions  class="return">
-          <button #butto mat-raised-button color="warn" routerLink="/" > {{'return' | translate}}</button>
+    <div class="grid-container">
+      <mat-card-actions class="return">
+        <button #butto mat-raised-button color="warn" routerLink="/"> {{'return' | translate}}</button>
       </mat-card-actions>
-          <div class="language">
-          <mat-label [ngClass]="{'languageColor' : userLang=='en'}" class="focus" (click)= 'changeToFr()'><b> {{'french'  | translate}} </b> </mat-label>
-          <mat-label [ngClass]="{'languageColor' : userLang=='fr'}" class="focus" (click)= 'changeToEn()' ><b> {{'english' | translate}} </b></mat-label>
-       </div>
-</div>
+      <div class="language">
+        <mat-label style="color:black">
+          <b>{{'language' | translate}}: </b>
+        </mat-label>
+        <mat-label [ngClass]="{'languageColor' : userLang=='en'}" class="focus" (click)='changeToFr()'>
+          <b> FR </b>
+        </mat-label>
+        <mat-label [ngClass]="{'languageColor' : userLang=='fr'}" class="focus" (click)='changeToEn()'>
+          <b> EN </b>
+        </mat-label>
+      </div>
+    </div>
     <mat-form-field class="mat-form-field-wrapper-update" class="space">
-      <input 
-      name="author"
-      #author
-      matInput placeholder="{{'filter_by_author' | translate}}">
+      <input name="author" #author matInput placeholder="{{'filter_by_author' | translate}}">
 
-      <mat-error >
-          {{'search_error' | translate}} 
+      <mat-error>
+        {{'search_error' | translate}}
       </mat-error>
-      
+
     </mat-form-field>
     <mat-form-field class="mat-form-field-wrapper-update" class="space">
-      <input 
-      name="category"
-      #category
-      matInput placeholder="{{'filter_by_category' | translate}} ">
+      <input name="category" #category matInput placeholder="{{'filter_by_category' | translate}} ">
 
-      <mat-error >
-          {{'search_error' | translate}} 
+      <mat-error>
+        {{'search_error' | translate}}
       </mat-error>
-      
+
     </mat-form-field>
-    <mat-form-field >
-      <mat-label > {{'select_book' | translate}} </mat-label>
-      <mat-select (selectionChange)="select($event.value)" >
-        <mat-option > {{'nothing' | translate}} </mat-option>
+    <mat-form-field>
+      <mat-label> {{'select_book' | translate}} </mat-label>
+      <mat-select (selectionChange)="select($event.value)">
+        <mat-option> {{'nothing' | translate}} </mat-option>
         <mat-option *ngFor="let book of books" [value]=" book.volumeInfo.title">
           {{ book.volumeInfo.title}}
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-card-actions  class="filter">
-      <button #butto mat-raised-button color="primary" (click)="filter(author.value,category.value)" > {{'filter' | translate}} </button>
+    <mat-card-actions class="filter">
+      <button #butto mat-raised-button color="primary" (click)="filter(author.value,category.value)"> {{'filter' | translate}} </button>
     </mat-card-actions>
 
 

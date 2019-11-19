@@ -12,7 +12,7 @@ import {TranslateService, TranslatePipe} from '@ngx-translate/core';
 export class AdzsearchComponent implements OnInit {
   public form: FormGroup;
   public input: AbstractControl;
-
+  public userLang: String;
   constructor(private fb: FormBuilder,
               private router: Router, 
               private dataService: DataService,
@@ -21,7 +21,8 @@ export class AdzsearchComponent implements OnInit {
       'input': ['', Validators.compose([Validators.required, Validators.min(2)])]
     })
     this.input = this.form.controls['input'];
-
+ //get the prefered language
+ this.userLang = localStorage.getItem('userLang') ? localStorage.getItem('userLang') : navigator.language.substring(0, 2);
   }
 
   ngOnInit() {
@@ -31,4 +32,17 @@ export class AdzsearchComponent implements OnInit {
     let key = ob['input'];
     this.router.navigate(['/results/', key, '1']);
   }
+
+      // change the language to french
+      changeToFr() {
+        this.userLang = 'fr';
+        localStorage.setItem('userLang', 'fr');
+        this.translate.setDefaultLang('fr');
+      }
+      // change the language to english
+      changeToEn() {
+        this.userLang = 'en';
+        localStorage.setItem('userLang', 'en');
+        this.translate.setDefaultLang('en');
+      }
 }

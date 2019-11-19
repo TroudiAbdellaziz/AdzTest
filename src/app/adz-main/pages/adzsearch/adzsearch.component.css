@@ -10,3 +10,15 @@
     display:block;
     padding-top: 109px;
   }
+
+  .language{
+    margin-bottom:0px;
+    color:gray;
+    text-align:right;
+    padding-top: 8px; 
+    padding-left: -20px; 
+}
+.languageColor{
+  color:blue;
+  text-decoration: underline;
+}
