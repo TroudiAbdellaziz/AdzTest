@@ -8,6 +8,7 @@ import { MAT_DIALOG_DATA, MatDialogRef, MatDialogContent } from "@angular/materi
 })
 export class DialogComponent implements OnInit {
   public book: any;
+  //inject data to the popup
   constructor(private dialogRef: MatDialogRef<DialogComponent>,
     @Inject(MAT_DIALOG_DATA) data) {
     this.book = data;

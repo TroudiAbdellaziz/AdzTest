@@ -20,6 +20,7 @@ export class BookComponent implements OnInit {
   ngOnInit() {
 
   }
+  // when the book is passed to the component, manipulate the data to make it more convenient to the card. ( title length, number of showen authors)
   ngOnChanges(changes: { [propKey: string]: SimpleChange }) {
     if (changes['book']) {
       if (this.book.volumeInfo.authors) {
@@ -30,12 +31,11 @@ export class BookComponent implements OnInit {
       }
     }
   }
-
+//show the hidden title if it was ommited because it was long
   showTitle(){
-
     this.longText=false;
   }
-
+// open popup and inject data to the popup
   openDialog() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = false;

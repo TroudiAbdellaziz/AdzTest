@@ -26,6 +26,7 @@ export class AdzsearchComponent implements OnInit {
 
   ngOnInit() {
   }
+  // search function that navigates to the result page
   search(ob: object) {
     let key = ob['input'];
     this.router.navigate(['/results/', key, '1']);
