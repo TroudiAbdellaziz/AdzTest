@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import {AdzresultComponent} from './pages/adzresult/adzresult.component';
 import {AdzsearchComponent} from './pages/adzsearch/adzsearch.component';
 const routes: Routes = [
-  {path: '', component: AdzsearchComponent },
-  {path: 'results/:text/:page', component: AdzresultComponent }
+  {path: '', component: AdzresultComponent },
+  {path: 'results/books/1', component: AdzresultComponent }
 ];
 
 @NgModule({

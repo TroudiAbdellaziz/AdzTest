@@ -23,7 +23,7 @@ export class AdzresultComponent implements OnInit {
     if (!this.isCalled) {
       this.subscription = this.router.events.subscribe(route => {
 
-        self.dataService.getData(self.route.snapshot.params['text'], self.route.snapshot.params['page'])
+        self.dataService.getData('books','1')
           .toPromise()
           .then((res) => {
             self.books = res.items;
